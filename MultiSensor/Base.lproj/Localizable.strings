@@ -1,0 +1,70 @@
+/* 
+  Localizable.strings
+  MultiSensor
+
+  Created by Apple on 2016/9/19.
+  Copyright © 2016年 ECOA. All rights reserved.
+*/
+"Appname"="ECOA FUEGO";
+"realtime"="Realtime Data";
+"history"="History Data";
+"setting"="Device Setting";
+"list"="Device List";
+"search"="Search Device";
+"menu"="Menu";
+"ssid"="SSID";
+"pass"="Password";
+"devname"="Device Name";
+"no_ap_title"="No AP Password entered";
+"no_ap_message"="Do you want to continue?";
+"no_wifi_title"="No WiFi detected";
+"no_wifi_message"="Switch to AP Provisioning?";
+"search_start"="Start";
+"search_searching"="Searching";
+"add_device"="Add this Device?";
+"sync"="Synchronizing setting...";
+"sync_ok"="Complete";
+"sync_fail"="Synchronize failed, please try again.";
+"co2"="CO2";
+"co"="CO";
+"gas"="Gas";
+"voc"="VOC";
+"press"="Pressure";
+"humi"="Humidity";
+"temp"="Temperature";
+
+"no_data"="---";
+
+"setting_save"="Save";
+"setting_co2ofs"="CO2 concentration correction";
+"setting_pm25ofs"="PM2.5 concentration correction";
+"setting_pressofs"="Pressure correction";
+"setting_coofs"="CO concentration correction";
+"setting_iaqofs"="IAQ concentration correction";
+"setting_tempofs"="Temperature correction";
+"setting_humiofs"="Humidity correction";
+"setting_gasofs"="Gas concentration correction";
+"setting_fanspeed"="Fan Speed";
+"setting_pirsensitive"="PIR sensitivity";
+"setting_pirdelay"="PIR Relay output duration";
+"setting_tempalmlow"="Abnormal for Temperature that lower than the low limit set value";
+"setting_tempalmhigh"="Abnormal for Temperature that exceed the high limit set value";
+"setting_vocalmhigh"="Abnormal for VOC that exceed the first stage high limit set value";
+"setting_vocalmhigh2"="Abnormal for VOC that exceed the second stage high limit set value";
+"setting_co2almhigh"="Abnormal for CO2 that exceed the first stage high limit set value";
+"setting_co2almhigh2"="Abnormal for CO2 that exceed the second stage high limit set value";
+"setting_coalmhigh"="Abnormal for CO that exceed the first stage high limit set value";
+"setting_coalmhigh2"="Abnormal for CO that exceed the second stage high limit set value";
+"setting_gasalmhigh"="Abnormal for GAS that exceed the first stage high limit set value";
+"setting_gasalmhigh2"="Abnormal for GAS that exceed the second stage high limit set value";
+"setting_dustalmhigh"="Abnormal for PM2.5 that exceed the first stage high limit set value";
+"setting_dustalmhigh2"="Abnormal for PM2.5 that exceed the second stage high limit set value";
+
+"notif_TempAlarm"="Temperature out of bound";
+"notif_HumiAlarm"="Humi out of bound";
+"VocAlarm"="IAQ out of bound";
+"CO2Alarm"="CO2 out of bound";
+"GasAlarm"="Gas out of bound";
+"CoAlarm"="CO out of bound";
+"CH2OAlarm"="";
+"DustAlarm"="PM2.5 out of bound";

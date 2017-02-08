@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180EC3591E4ACDBE009A8913 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180EC3541E4ACD87009A8913 /* Charts.framework */; };
+		180EC35A1E4ACDBE009A8913 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 180EC3541E4ACD87009A8913 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		182659B31D8F849A00C60627 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 182659B51D8F849A00C60627 /* Localizable.strings */; };
+		182659BA1D8F859B00C60627 /* infoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 182659B91D8F859B00C60627 /* infoPlist.strings */; };
+		182659C61D8F8A8800C60627 /* RealtimeDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182659C51D8F8A8800C60627 /* RealtimeDataController.m */; };
+		182659CC1D90E04100C60627 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182659CB1D90E04100C60627 /* HistoryViewController.m */; };
+		182659CF1D90E06C00C60627 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182659CE1D90E06C00C60627 /* SearchViewController.m */; };
+		182659D21D93E0D100C60627 /* DeviceListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182659D11D93E0D100C60627 /* DeviceListViewController.m */; };
+		18400E131DE2E7FD00C0461F /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18400E121DE2E7FD00C0461F /* WebViewController.m */; };
+		184D8EDA1DA1FED400F894CC /* HistoryContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184D8ED91DA1FED400F894CC /* HistoryContentViewController.m */; };
+		18674CEB1DB05D580058E087 /* pollMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 18674CEA1DB05D580058E087 /* pollMode.m */; };
+		1870E09C1DAF301500CB4699 /* FTC.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1870E0911DAF301500CB4699 /* FTC.plist */; };
+		1870E09D1DAF301500CB4699 /* libFirstTimeConfig.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1870E0941DAF301500CB4699 /* libFirstTimeConfig.a */; };
+		1870E09E1DAF301500CB4699 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1870E0951DAF301500CB4699 /* libzbar.a */; };
+		1870E09F1DAF301500CB4699 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1870E09A1DAF301500CB4699 /* Reachability.m */; };
+		1870E0A51DAF30B500CB4699 /* SmartConfigDiscoverMDNS.m in Sources */ = {isa = PBXBuildFile; fileRef = 1870E0A21DAF30B500CB4699 /* SmartConfigDiscoverMDNS.m */; };
+		1870E0A61DAF30B500CB4699 /* SmartConfigGlobalConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 1870E0A41DAF30B500CB4699 /* SmartConfigGlobalConfig.m */; };
+		187468D91DF5177600BB9130 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187468D81DF5177600BB9130 /* SettingViewController.m */; };
+		18AA32321E0283C200CD9ECA /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18AA32311E0283C200CD9ECA /* libsqlite3.tbd */; };
+		18BFCA431DE54A1600F5141E /* DBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BFCA421DE54A1600F5141E /* DBHelper.m */; };
 		18CC33791D82B03A0010FAF0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CC33781D82B03A0010FAF0 /* main.m */; };
 		18CC337C1D82B03A0010FAF0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CC337B1D82B03A0010FAF0 /* AppDelegate.m */; };
 		18CC337F1D82B03A0010FAF0 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CC337E1D82B03A0010FAF0 /* MasterViewController.m */; };
@@ -16,9 +36,38 @@
 		18CC338A1D82B03A0010FAF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CC33881D82B03A0010FAF0 /* LaunchScreen.storyboard */; };
 		18CC33951D82B03A0010FAF0 /* MultiSensorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CC33941D82B03A0010FAF0 /* MultiSensorTests.m */; };
 		18CC33A01D82B03A0010FAF0 /* MultiSensorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CC339F1D82B03A0010FAF0 /* MultiSensorUITests.m */; };
+		2FF29963B27B8B8E72EBAC9D /* Pods_MultiSensor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF503F563FEC2D5CA20261FD /* Pods_MultiSensor.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		180EC3531E4ACD87009A8913 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 180EC34D1E4ACD87009A8913 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F241D8110E600722320;
+			remoteInfo = Charts;
+		};
+		180EC3551E4ACD87009A8913 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 180EC34D1E4ACD87009A8913 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06B120D51D811E6200D14B02;
+			remoteInfo = ChartsRealm;
+		};
+		180EC3571E4ACD87009A8913 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 180EC34D1E4ACD87009A8913 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F2E1D8110E600722320;
+			remoteInfo = ChartsTests;
+		};
+		180EC35B1E4ACDBE009A8913 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 180EC34D1E4ACD87009A8913 /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 06165F231D8110E600722320;
+			remoteInfo = Charts;
+		};
 		18CC33911D82B03A0010FAF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 18CC336C1D82B0390010FAF0 /* Project object */;
@@ -35,7 +84,66 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		180EC35D1E4ACDBE009A8913 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				180EC35A1E4ACDBE009A8913 /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		180EC34D1E4ACD87009A8913 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
+		1814567D1E36E34C00BD1321 /* MultiSensor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MultiSensor.entitlements; sourceTree = "<group>"; };
+		182659AD1D8F841500C60627 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		182659AE1D8F841500C60627 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		182659AF1D8F841E00C60627 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		182659B01D8F841E00C60627 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		182659B81D8F84A000C60627 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		182659B91D8F859B00C60627 /* infoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = infoPlist.strings; path = "../../../../../apple/Documents/apple app workspace/MultiSensor/MultiSensor/infoPlist.strings"; sourceTree = "<group>"; };
+		182659BB1D8F865400C60627 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		182659BC1D8F865600C60627 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		182659C41D8F8A8800C60627 /* RealtimeDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RealtimeDataController.h; path = "../../../../../apple/Documents/apple app workspace/MultiSensor/MultiSensor/RealtimeDataController.h"; sourceTree = "<group>"; };
+		182659C51D8F8A8800C60627 /* RealtimeDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RealtimeDataController.m; path = "../../../../../apple/Documents/apple app workspace/MultiSensor/MultiSensor/RealtimeDataController.m"; sourceTree = "<group>"; };
+		182659CA1D90E04100C60627 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryViewController.h; path = "../../../../../apple/Documents/apple app workspace/MultiSensor/MultiSensor/HistoryViewController.h"; sourceTree = "<group>"; };
+		182659CB1D90E04100C60627 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryViewController.m; path = "../../../../../apple/Documents/apple app workspace/MultiSensor/MultiSensor/HistoryViewController.m"; sourceTree = "<group>"; };
+		182659CD1D90E06C00C60627 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = "../../../../../apple/Documents/apple app workspace/MultiSensor/MultiSensor/SearchViewController.h"; sourceTree = "<group>"; };
+		182659CE1D90E06C00C60627 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = "../../../../../apple/Documents/apple app workspace/MultiSensor/MultiSensor/SearchViewController.m"; sourceTree = "<group>"; };
+		182659D01D93E0D100C60627 /* DeviceListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeviceListViewController.h; path = "../../../../../apple/Documents/apple app workspace/MultiSensor/MultiSensor/DeviceListViewController.h"; sourceTree = "<group>"; };
+		182659D11D93E0D100C60627 /* DeviceListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeviceListViewController.m; path = "../../../../../apple/Documents/apple app workspace/MultiSensor/MultiSensor/DeviceListViewController.m"; sourceTree = "<group>"; };
+		18400E111DE2E7FD00C0461F /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		18400E121DE2E7FD00C0461F /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		184D8ED81DA1FED400F894CC /* HistoryContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryContentViewController.h; path = "../../../../../apple/Documents/apple app workspace/MultiSensor/MultiSensor/HistoryContentViewController.h"; sourceTree = "<group>"; };
+		184D8ED91DA1FED400F894CC /* HistoryContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryContentViewController.m; path = "../../../../../apple/Documents/apple app workspace/MultiSensor/MultiSensor/HistoryContentViewController.m"; sourceTree = "<group>"; };
+		18674CE91DB05D580058E087 /* pollMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pollMode.h; sourceTree = "<group>"; };
+		18674CEA1DB05D580058E087 /* pollMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pollMode.m; sourceTree = "<group>"; };
+		1870E08F1DAF301500CB4699 /* FirstTimeConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstTimeConfig.h; sourceTree = "<group>"; };
+		1870E0901DAF301500CB4699 /* FTC-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FTC-Prefix.pch"; sourceTree = "<group>"; };
+		1870E0911DAF301500CB4699 /* FTC.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FTC.plist; sourceTree = "<group>"; };
+		1870E0921DAF301500CB4699 /* Ftc20.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ftc20.h; sourceTree = "<group>"; };
+		1870E0931DAF301500CB4699 /* FtcEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FtcEncode.h; sourceTree = "<group>"; };
+		1870E0941DAF301500CB4699 /* libFirstTimeConfig.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFirstTimeConfig.a; sourceTree = "<group>"; };
+		1870E0951DAF301500CB4699 /* libzbar.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzbar.a; sourceTree = "<group>"; };
+		1870E0961DAF301500CB4699 /* NetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkHelper.h; sourceTree = "<group>"; };
+		1870E0971DAF301500CB4699 /* NSData+AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AESCrypt.h"; sourceTree = "<group>"; };
+		1870E0981DAF301500CB4699 /* NSString+AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+AESCrypt.h"; sourceTree = "<group>"; };
+		1870E0991DAF301500CB4699 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		1870E09A1DAF301500CB4699 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		1870E0A11DAF30B500CB4699 /* SmartConfigDiscoverMDNS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartConfigDiscoverMDNS.h; sourceTree = "<group>"; };
+		1870E0A21DAF30B500CB4699 /* SmartConfigDiscoverMDNS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmartConfigDiscoverMDNS.m; sourceTree = "<group>"; };
+		1870E0A31DAF30B500CB4699 /* SmartConfigGlobalConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartConfigGlobalConfig.h; sourceTree = "<group>"; };
+		1870E0A41DAF30B500CB4699 /* SmartConfigGlobalConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmartConfigGlobalConfig.m; sourceTree = "<group>"; };
+		187468D71DF5177600BB9130 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		187468D81DF5177600BB9130 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		18AA32311E0283C200CD9ECA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		18BFCA411DE54A1600F5141E /* DBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBHelper.h; path = "../../../../../apple/Documents/apple app workspace/MultiSensor/MultiSensor/DBHelper.h"; sourceTree = "<group>"; };
+		18BFCA421DE54A1600F5141E /* DBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBHelper.m; path = "../../../../../apple/Documents/apple app workspace/MultiSensor/MultiSensor/DBHelper.m"; sourceTree = "<group>"; };
 		18CC33741D82B03A0010FAF0 /* MultiSensor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiSensor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18CC33781D82B03A0010FAF0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18CC337A1D82B03A0010FAF0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -54,6 +162,9 @@
 		18CC339B1D82B03A0010FAF0 /* MultiSensorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiSensorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18CC339F1D82B03A0010FAF0 /* MultiSensorUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiSensorUITests.m; sourceTree = "<group>"; };
 		18CC33A11D82B03A0010FAF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45ACF30B7B60EFB65763562E /* Pods-MultiSensor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiSensor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MultiSensor/Pods-MultiSensor.debug.xcconfig"; sourceTree = "<group>"; };
+		E40D68704F8F14A864B6F3CA /* Pods-MultiSensor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiSensor.release.xcconfig"; path = "Pods/Target Support Files/Pods-MultiSensor/Pods-MultiSensor.release.xcconfig"; sourceTree = "<group>"; };
+		EF503F563FEC2D5CA20261FD /* Pods_MultiSensor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultiSensor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +172,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18AA32321E0283C200CD9ECA /* libsqlite3.tbd in Frameworks */,
+				2FF29963B27B8B8E72EBAC9D /* Pods_MultiSensor.framework in Frameworks */,
+				180EC3591E4ACDBE009A8913 /* Charts.framework in Frameworks */,
+				1870E09D1DAF301500CB4699 /* libFirstTimeConfig.a in Frameworks */,
+				1870E09E1DAF301500CB4699 /* libzbar.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,13 +197,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		180EC34E1E4ACD87009A8913 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				180EC3541E4ACD87009A8913 /* Charts.framework */,
+				180EC3561E4ACD87009A8913 /* ChartsRealm.framework */,
+				180EC3581E4ACD87009A8913 /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		18CC336B1D82B0390010FAF0 = {
 			isa = PBXGroup;
 			children = (
+				180EC34D1E4ACD87009A8913 /* Charts.xcodeproj */,
 				18CC33761D82B03A0010FAF0 /* MultiSensor */,
 				18CC33931D82B03A0010FAF0 /* MultiSensorTests */,
 				18CC339E1D82B03A0010FAF0 /* MultiSensorUITests */,
 				18CC33751D82B03A0010FAF0 /* Products */,
+				BEDAC727D2A2B5368E563805 /* Pods */,
+				EFCCDAC70ED302D7E43C0D90 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +233,25 @@
 		18CC33761D82B03A0010FAF0 /* MultiSensor */ = {
 			isa = PBXGroup;
 			children = (
+				1814567D1E36E34C00BD1321 /* MultiSensor.entitlements */,
+				18400E111DE2E7FD00C0461F /* WebViewController.h */,
+				18400E121DE2E7FD00C0461F /* WebViewController.m */,
+				1870E0A11DAF30B500CB4699 /* SmartConfigDiscoverMDNS.h */,
+				1870E0A21DAF30B500CB4699 /* SmartConfigDiscoverMDNS.m */,
+				1870E0A31DAF30B500CB4699 /* SmartConfigGlobalConfig.h */,
+				1870E0A41DAF30B500CB4699 /* SmartConfigGlobalConfig.m */,
+				1870E08F1DAF301500CB4699 /* FirstTimeConfig.h */,
+				1870E0901DAF301500CB4699 /* FTC-Prefix.pch */,
+				1870E0911DAF301500CB4699 /* FTC.plist */,
+				1870E0921DAF301500CB4699 /* Ftc20.h */,
+				1870E0931DAF301500CB4699 /* FtcEncode.h */,
+				1870E0941DAF301500CB4699 /* libFirstTimeConfig.a */,
+				1870E0951DAF301500CB4699 /* libzbar.a */,
+				1870E0961DAF301500CB4699 /* NetworkHelper.h */,
+				1870E0971DAF301500CB4699 /* NSData+AESCrypt.h */,
+				1870E0981DAF301500CB4699 /* NSString+AESCrypt.h */,
+				1870E0991DAF301500CB4699 /* Reachability.h */,
+				1870E09A1DAF301500CB4699 /* Reachability.m */,
 				18CC337A1D82B03A0010FAF0 /* AppDelegate.h */,
 				18CC337B1D82B03A0010FAF0 /* AppDelegate.m */,
 				18CC337D1D82B03A0010FAF0 /* MasterViewController.h */,
@@ -115,6 +263,24 @@
 				18CC33881D82B03A0010FAF0 /* LaunchScreen.storyboard */,
 				18CC338B1D82B03A0010FAF0 /* Info.plist */,
 				18CC33771D82B03A0010FAF0 /* Supporting Files */,
+				182659B51D8F849A00C60627 /* Localizable.strings */,
+				182659B91D8F859B00C60627 /* infoPlist.strings */,
+				182659C41D8F8A8800C60627 /* RealtimeDataController.h */,
+				182659C51D8F8A8800C60627 /* RealtimeDataController.m */,
+				182659CA1D90E04100C60627 /* HistoryViewController.h */,
+				182659CB1D90E04100C60627 /* HistoryViewController.m */,
+				182659CD1D90E06C00C60627 /* SearchViewController.h */,
+				182659CE1D90E06C00C60627 /* SearchViewController.m */,
+				182659D01D93E0D100C60627 /* DeviceListViewController.h */,
+				182659D11D93E0D100C60627 /* DeviceListViewController.m */,
+				184D8ED81DA1FED400F894CC /* HistoryContentViewController.h */,
+				184D8ED91DA1FED400F894CC /* HistoryContentViewController.m */,
+				18674CE91DB05D580058E087 /* pollMode.h */,
+				18674CEA1DB05D580058E087 /* pollMode.m */,
+				18BFCA411DE54A1600F5141E /* DBHelper.h */,
+				18BFCA421DE54A1600F5141E /* DBHelper.m */,
+				187468D71DF5177600BB9130 /* SettingViewController.h */,
+				187468D81DF5177600BB9130 /* SettingViewController.m */,
 			);
 			path = MultiSensor;
 			sourceTree = "<group>";
@@ -145,6 +311,24 @@
 			path = MultiSensorUITests;
 			sourceTree = "<group>";
 		};
+		BEDAC727D2A2B5368E563805 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				45ACF30B7B60EFB65763562E /* Pods-MultiSensor.debug.xcconfig */,
+				E40D68704F8F14A864B6F3CA /* Pods-MultiSensor.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EFCCDAC70ED302D7E43C0D90 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18AA32311E0283C200CD9ECA /* libsqlite3.tbd */,
+				EF503F563FEC2D5CA20261FD /* Pods_MultiSensor.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,13 +336,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18CC33A41D82B03A0010FAF0 /* Build configuration list for PBXNativeTarget "MultiSensor" */;
 			buildPhases = (
+				85730D1E4F487EA846FE1172 /* [CP] Check Pods Manifest.lock */,
 				18CC33701D82B0390010FAF0 /* Sources */,
 				18CC33711D82B0390010FAF0 /* Frameworks */,
 				18CC33721D82B0390010FAF0 /* Resources */,
+				902DA6F813BE4E7687813DBE /* [CP] Embed Pods Frameworks */,
+				88685C9CAA62310D59095074 /* [CP] Copy Pods Resources */,
+				180EC35D1E4ACDBE009A8913 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				180EC35C1E4ACDBE009A8913 /* PBXTargetDependency */,
 			);
 			name = MultiSensor;
 			productName = MultiSensor;
@@ -212,6 +401,16 @@
 				TargetAttributes = {
 					18CC33731D82B0390010FAF0 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = FNGZA8F536;
+						LastSwiftMigration = 0820;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					18CC338F1D82B03A0010FAF0 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -230,10 +429,18 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = 18CC336B1D82B0390010FAF0;
 			productRefGroup = 18CC33751D82B03A0010FAF0 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 180EC34E1E4ACD87009A8913 /* Products */;
+					ProjectRef = 180EC34D1E4ACD87009A8913 /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				18CC33731D82B0390010FAF0 /* MultiSensor */,
@@ -243,14 +450,41 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		180EC3541E4ACD87009A8913 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 180EC3531E4ACD87009A8913 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		180EC3561E4ACD87009A8913 /* ChartsRealm.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ChartsRealm.framework;
+			remoteRef = 180EC3551E4ACD87009A8913 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		180EC3581E4ACD87009A8913 /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = 180EC3571E4ACD87009A8913 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		18CC33721D82B0390010FAF0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				18CC338A1D82B03A0010FAF0 /* LaunchScreen.storyboard in Resources */,
+				182659B31D8F849A00C60627 /* Localizable.strings in Resources */,
 				18CC33871D82B03A0010FAF0 /* Assets.xcassets in Resources */,
 				18CC33851D82B03A0010FAF0 /* Main.storyboard in Resources */,
+				1870E09C1DAF301500CB4699 /* FTC.plist in Resources */,
+				182659BA1D8F859B00C60627 /* infoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,15 +504,75 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		85730D1E4F487EA846FE1172 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		88685C9CAA62310D59095074 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MultiSensor/Pods-MultiSensor-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		902DA6F813BE4E7687813DBE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MultiSensor/Pods-MultiSensor-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		18CC33701D82B0390010FAF0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1870E0A61DAF30B500CB4699 /* SmartConfigGlobalConfig.m in Sources */,
+				18400E131DE2E7FD00C0461F /* WebViewController.m in Sources */,
+				182659D21D93E0D100C60627 /* DeviceListViewController.m in Sources */,
 				18CC337C1D82B03A0010FAF0 /* AppDelegate.m in Sources */,
+				1870E0A51DAF30B500CB4699 /* SmartConfigDiscoverMDNS.m in Sources */,
+				182659C61D8F8A8800C60627 /* RealtimeDataController.m in Sources */,
+				184D8EDA1DA1FED400F894CC /* HistoryContentViewController.m in Sources */,
+				1870E09F1DAF301500CB4699 /* Reachability.m in Sources */,
 				18CC337F1D82B03A0010FAF0 /* MasterViewController.m in Sources */,
 				18CC33791D82B03A0010FAF0 /* main.m in Sources */,
 				18CC33821D82B03A0010FAF0 /* DetailViewController.m in Sources */,
+				18BFCA431DE54A1600F5141E /* DBHelper.m in Sources */,
+				182659CC1D90E04100C60627 /* HistoryViewController.m in Sources */,
+				182659CF1D90E06C00C60627 /* SearchViewController.m in Sources */,
+				18674CEB1DB05D580058E087 /* pollMode.m in Sources */,
+				187468D91DF5177600BB9130 /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +595,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		180EC35C1E4ACDBE009A8913 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = 180EC35B1E4ACDBE009A8913 /* PBXContainerItemProxy */;
+		};
 		18CC33921D82B03A0010FAF0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 18CC33731D82B0390010FAF0 /* MultiSensor */;
@@ -314,10 +613,23 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		182659B51D8F849A00C60627 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				182659B81D8F84A000C60627 /* Base */,
+				182659BB1D8F865400C60627 /* zh-Hans */,
+				182659BC1D8F865600C60627 /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			path = "../../../../../apple/Documents/apple app workspace/MultiSensor/MultiSensor";
+			sourceTree = "<group>";
+		};
 		18CC33831D82B03A0010FAF0 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				18CC33841D82B03A0010FAF0 /* Base */,
+				182659AD1D8F841500C60627 /* zh-Hans */,
+				182659AF1D8F841E00C60627 /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -326,6 +638,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				18CC33891D82B03A0010FAF0 /* Base */,
+				182659AE1D8F841500C60627 /* zh-Hans */,
+				182659B01D8F841E00C60627 /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -372,7 +686,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -419,23 +733,49 @@
 		};
 		18CC33A51D82B03A0010FAF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45ACF30B7B60EFB65763562E /* Pods-MultiSensor.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MultiSensor/MultiSensor.entitlements;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MultiSensor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MultiSensor/ZBarSDK",
+					"$(PROJECT_DIR)/MultiSensor",
+				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "ECOA-technologies-corp.MultiSensor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
 		18CC33A61D82B03A0010FAF0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E40D68704F8F14A864B6F3CA /* Pods-MultiSensor.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MultiSensor/MultiSensor.entitlements;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MultiSensor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MultiSensor/ZBarSDK",
+					"$(PROJECT_DIR)/MultiSensor",
+				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "ECOA-technologies-corp.MultiSensor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -504,6 +844,7 @@
 				18CC33A61D82B03A0010FAF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18CC33A71D82B03A0010FAF0 /* Build configuration list for PBXNativeTarget "MultiSensorTests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +853,7 @@
 				18CC33A91D82B03A0010FAF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18CC33AA1D82B03A0010FAF0 /* Build configuration list for PBXNativeTarget "MultiSensorUITests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +862,7 @@
 				18CC33AC1D82B03A0010FAF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

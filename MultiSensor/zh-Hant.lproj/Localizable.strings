@@ -1,0 +1,70 @@
+/* 
+  Localizable.strings
+  MultiSensor
+
+  Created by Apple on 2016/9/19.
+  Copyright © 2016年 ECOA. All rights reserved.
+*/
+"Appname"="ECOA FUEGO";
+"realtime"="即時資料";
+"history"="歷史資料";
+"setting"="設備設定";
+"list"="設備列表";
+"search"="尋找設備";
+"menu"="選單";
+"ssid"="WiFi站點";
+"pass"="密碼";
+"devname"="設備名稱";
+"no_ap_title"="沒有輸入無線基地台密碼";
+"no_ap_message"="確定要繼續嗎？";
+"no_wifi_title"="偵測不到無線訊號";
+"no_wifi_message"="切換到無線站台模式?";
+"search_start"="開始搜尋";
+"search_searching"="搜尋中";
+"add_device"="新增這個裝置？";
+"sync"="正在同步設定";
+"sync_ok"="設定同步完成";
+"sync_fail"="設定同步失敗，請稍候再試";
+"co2"="二氧化碳";
+"co"="一氧化碳";
+"gas"="瓦斯氣體";
+"voc"="揮發性有機物";
+"press"="氣壓";
+"humi"="濕度";
+"temp"="溫度";
+
+"no_data"="---";
+
+"setting_save"="儲存";
+"setting_co2ofs"="二氧化碳校正值";
+"setting_pm25ofs"="PM2.5校正值";
+"setting_pressofs"="大氣壓力校正值";
+"setting_coofs"="一氧化碳校正值";
+"setting_iaqofs"="IAQ校正值";
+"setting_tempofs"="溫度校正值";
+"setting_humiofs"="濕度校正值";
+"setting_gasofs"="瓦斯濃度校正值";
+"setting_fanspeed"="循環風扇速度";
+"setting_pirsensitive"="PIR 靈敏度";
+"setting_pirdelay"="PIR 延遲";
+"setting_tempalmlow"="溫度異常低限設定值";
+"setting_tempalmhigh"="溫度異常高限設定值";
+"setting_vocalmhigh"="VOC 第一段高限異常設定值";
+"setting_vocalmhigh2"="VOC 第二段高限異常設定值";
+"setting_co2almhigh"="CO2 第一段高限異常設定值";
+"setting_co2almhigh2"="CO2 第二段高限異常設定值";
+"setting_coalmhigh"="CO 第一段高限異常設定值";
+"setting_coalmhigh2"="CO 第二段高限異常設定值";
+"setting_gasalmhigh"="瓦斯 第一段高限異常設定值";
+"setting_gasalmhigh2"="瓦斯 第二段高限異常設定值";
+"setting_dustalmhigh"="PM2.5 第一段高限異常設定值";
+"setting_dustalmhigh2"="PM2.5 第二段高限異常設定值";
+
+"notif_TempAlarm"="溫度上限警報";
+"notif_HumiAlarm"="濕度上限警報";
+"VocAlarm"="IAQ上限警報";
+"CO2Alarm"="二氧化碳濃度上限警報";
+"GasAlarm"="瓦斯警報";
+"CoAlarm"="一氧化碳濃度上限警報";
+"CH2OAlarm"="";
+"DustAlarm"="PM2.5濃度上限警報";

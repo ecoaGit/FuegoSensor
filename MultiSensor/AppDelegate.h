@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SmartConfigGlobalConfig.h"
+#import "DBHelper.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
