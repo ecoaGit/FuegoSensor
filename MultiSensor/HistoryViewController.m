@@ -32,10 +32,8 @@
     NSArray *contentArray=[NSArray arrayWithObject:firstViewController];
     [_pageViewController setViewControllers:contentArray direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
     _pageViewController.view.frame=self.view.bounds;
-    //[self.view setBackgroundColor:[UIColor colorWithRed: green:<#(CGFloat)#> blue:<#(CGFloat)#> alpha:1.0]];
     [self addChildViewController:_pageViewController];
     [self.view addSubview:_pageViewController.view];
-    
 }
 
 -(void)viewDidLayoutSubviews{

@@ -9,18 +9,18 @@
 /* Begin PBXBuildFile section */
 		180EC3591E4ACDBE009A8913 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180EC3541E4ACD87009A8913 /* Charts.framework */; };
 		180EC35A1E4ACDBE009A8913 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 180EC3541E4ACD87009A8913 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		180EC36A1E4DA482009A8913 /* libFirstTimeConfig.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 180EC3691E4DA482009A8913 /* libFirstTimeConfig.a */; };
 		182659B31D8F849A00C60627 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 182659B51D8F849A00C60627 /* Localizable.strings */; };
 		182659BA1D8F859B00C60627 /* infoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 182659B91D8F859B00C60627 /* infoPlist.strings */; };
 		182659C61D8F8A8800C60627 /* RealtimeDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182659C51D8F8A8800C60627 /* RealtimeDataController.m */; };
 		182659CC1D90E04100C60627 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182659CB1D90E04100C60627 /* HistoryViewController.m */; };
 		182659CF1D90E06C00C60627 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182659CE1D90E06C00C60627 /* SearchViewController.m */; };
 		182659D21D93E0D100C60627 /* DeviceListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182659D11D93E0D100C60627 /* DeviceListViewController.m */; };
+		182D53931E55906900D57FB5 /* AxisDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 182D53921E55906900D57FB5 /* AxisDateFormatter.m */; };
 		18400E131DE2E7FD00C0461F /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18400E121DE2E7FD00C0461F /* WebViewController.m */; };
 		184D8EDA1DA1FED400F894CC /* HistoryContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184D8ED91DA1FED400F894CC /* HistoryContentViewController.m */; };
 		18674CEB1DB05D580058E087 /* pollMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 18674CEA1DB05D580058E087 /* pollMode.m */; };
 		1870E09C1DAF301500CB4699 /* FTC.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1870E0911DAF301500CB4699 /* FTC.plist */; };
-		1870E09D1DAF301500CB4699 /* libFirstTimeConfig.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1870E0941DAF301500CB4699 /* libFirstTimeConfig.a */; };
-		1870E09E1DAF301500CB4699 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1870E0951DAF301500CB4699 /* libzbar.a */; };
 		1870E09F1DAF301500CB4699 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1870E09A1DAF301500CB4699 /* Reachability.m */; };
 		1870E0A51DAF30B500CB4699 /* SmartConfigDiscoverMDNS.m in Sources */ = {isa = PBXBuildFile; fileRef = 1870E0A21DAF30B500CB4699 /* SmartConfigDiscoverMDNS.m */; };
 		1870E0A61DAF30B500CB4699 /* SmartConfigGlobalConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 1870E0A41DAF30B500CB4699 /* SmartConfigGlobalConfig.m */; };
@@ -100,6 +100,7 @@
 
 /* Begin PBXFileReference section */
 		180EC34D1E4ACD87009A8913 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
+		180EC3691E4DA482009A8913 /* libFirstTimeConfig.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFirstTimeConfig.a; sourceTree = "<group>"; };
 		1814567D1E36E34C00BD1321 /* MultiSensor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MultiSensor.entitlements; sourceTree = "<group>"; };
 		182659AD1D8F841500C60627 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		182659AE1D8F841500C60627 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -117,6 +118,8 @@
 		182659CE1D90E06C00C60627 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = "../../../../../apple/Documents/apple app workspace/MultiSensor/MultiSensor/SearchViewController.m"; sourceTree = "<group>"; };
 		182659D01D93E0D100C60627 /* DeviceListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeviceListViewController.h; path = "../../../../../apple/Documents/apple app workspace/MultiSensor/MultiSensor/DeviceListViewController.h"; sourceTree = "<group>"; };
 		182659D11D93E0D100C60627 /* DeviceListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeviceListViewController.m; path = "../../../../../apple/Documents/apple app workspace/MultiSensor/MultiSensor/DeviceListViewController.m"; sourceTree = "<group>"; };
+		182D53911E55906900D57FB5 /* AxisDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxisDateFormatter.h; sourceTree = "<group>"; };
+		182D53921E55906900D57FB5 /* AxisDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxisDateFormatter.m; sourceTree = "<group>"; };
 		18400E111DE2E7FD00C0461F /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		18400E121DE2E7FD00C0461F /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		184D8ED81DA1FED400F894CC /* HistoryContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryContentViewController.h; path = "../../../../../apple/Documents/apple app workspace/MultiSensor/MultiSensor/HistoryContentViewController.h"; sourceTree = "<group>"; };
@@ -128,8 +131,6 @@
 		1870E0911DAF301500CB4699 /* FTC.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FTC.plist; sourceTree = "<group>"; };
 		1870E0921DAF301500CB4699 /* Ftc20.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ftc20.h; sourceTree = "<group>"; };
 		1870E0931DAF301500CB4699 /* FtcEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FtcEncode.h; sourceTree = "<group>"; };
-		1870E0941DAF301500CB4699 /* libFirstTimeConfig.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFirstTimeConfig.a; sourceTree = "<group>"; };
-		1870E0951DAF301500CB4699 /* libzbar.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzbar.a; sourceTree = "<group>"; };
 		1870E0961DAF301500CB4699 /* NetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkHelper.h; sourceTree = "<group>"; };
 		1870E0971DAF301500CB4699 /* NSData+AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AESCrypt.h"; sourceTree = "<group>"; };
 		1870E0981DAF301500CB4699 /* NSString+AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+AESCrypt.h"; sourceTree = "<group>"; };
@@ -175,8 +176,7 @@
 				18AA32321E0283C200CD9ECA /* libsqlite3.tbd in Frameworks */,
 				2FF29963B27B8B8E72EBAC9D /* Pods_MultiSensor.framework in Frameworks */,
 				180EC3591E4ACDBE009A8913 /* Charts.framework in Frameworks */,
-				1870E09D1DAF301500CB4699 /* libFirstTimeConfig.a in Frameworks */,
-				1870E09E1DAF301500CB4699 /* libzbar.a in Frameworks */,
+				180EC36A1E4DA482009A8913 /* libFirstTimeConfig.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,11 +245,10 @@
 				1870E0911DAF301500CB4699 /* FTC.plist */,
 				1870E0921DAF301500CB4699 /* Ftc20.h */,
 				1870E0931DAF301500CB4699 /* FtcEncode.h */,
-				1870E0941DAF301500CB4699 /* libFirstTimeConfig.a */,
-				1870E0951DAF301500CB4699 /* libzbar.a */,
 				1870E0961DAF301500CB4699 /* NetworkHelper.h */,
 				1870E0971DAF301500CB4699 /* NSData+AESCrypt.h */,
 				1870E0981DAF301500CB4699 /* NSString+AESCrypt.h */,
+				180EC3691E4DA482009A8913 /* libFirstTimeConfig.a */,
 				1870E0991DAF301500CB4699 /* Reachability.h */,
 				1870E09A1DAF301500CB4699 /* Reachability.m */,
 				18CC337A1D82B03A0010FAF0 /* AppDelegate.h */,
@@ -281,6 +280,8 @@
 				18BFCA421DE54A1600F5141E /* DBHelper.m */,
 				187468D71DF5177600BB9130 /* SettingViewController.h */,
 				187468D81DF5177600BB9130 /* SettingViewController.m */,
+				182D53911E55906900D57FB5 /* AxisDateFormatter.h */,
+				182D53921E55906900D57FB5 /* AxisDateFormatter.m */,
 			);
 			path = MultiSensor;
 			sourceTree = "<group>";
@@ -563,6 +564,7 @@
 				18CC337C1D82B03A0010FAF0 /* AppDelegate.m in Sources */,
 				1870E0A51DAF30B500CB4699 /* SmartConfigDiscoverMDNS.m in Sources */,
 				182659C61D8F8A8800C60627 /* RealtimeDataController.m in Sources */,
+				182D53931E55906900D57FB5 /* AxisDateFormatter.m in Sources */,
 				184D8EDA1DA1FED400F894CC /* HistoryContentViewController.m in Sources */,
 				1870E09F1DAF301500CB4699 /* Reachability.m in Sources */,
 				18CC337F1D82B03A0010FAF0 /* MasterViewController.m in Sources */,
@@ -736,6 +738,7 @@
 			baseConfigurationReference = 45ACF30B7B60EFB65763562E /* Pods-MultiSensor.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MultiSensor/MultiSensor.entitlements;
 				ENABLE_BITCODE = NO;
@@ -760,6 +763,7 @@
 			baseConfigurationReference = E40D68704F8F14A864B6F3CA /* Pods-MultiSensor.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MultiSensor/MultiSensor.entitlements;
 				ENABLE_BITCODE = NO;

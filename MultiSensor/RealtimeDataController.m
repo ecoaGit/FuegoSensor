@@ -39,7 +39,7 @@ NSString *mac;
     self.socket =nil;
     NSUserDefaults *nd=[NSUserDefaults standardUserDefaults];
     mac=[nd objectForKey:@"mac"];
-    NSLog(@"mac%@", mac);
+    //NSLog(@"mac%@", mac);
     pauseUpdate=NO;
     UIImage *backg=[UIImage imageNamed:@"realtimebackground"];
     self.view.layer.contents=(id)backg.CGImage;

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SmartConfigGlobalConfig.h"
 #import <SystemConfiguration/CaptiveNetwork.h>
+//#import "SearchViewController.h"
 
 //@class DetailViewController;
 @class RealtimeDataController;

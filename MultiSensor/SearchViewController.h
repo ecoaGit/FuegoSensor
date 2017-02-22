@@ -21,7 +21,7 @@
 #define writeSyncCommandTag 3
 
 
-@interface SearchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, NSURLConnectionDataDelegate, NSURLConnectionDelegate, GCDAsyncSocketDelegate>
+@interface SearchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, NSURLConnectionDataDelegate, NSURLConnectionDelegate, GCDAsyncSocketDelegate, UITextFieldDelegate>
 
 
 @property (nonatomic, retain) IBOutlet UITextField *apPass;

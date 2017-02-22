@@ -13,7 +13,7 @@ int const MDNSRestartTime = 15;
 float progression=0;
 BOOL discoveryInProgress;
 
-@interface SearchViewController()<UITableViewDataSource, UITableViewDelegate, NSURLConnectionDataDelegate, NSURLConnectionDelegate,GCDAsyncSocketDelegate>
+@interface SearchViewController()<UITableViewDataSource, UITableViewDelegate, NSURLConnectionDataDelegate, NSURLConnectionDelegate,GCDAsyncSocketDelegate, UITextFieldDelegate>
 
 @end
 
@@ -54,8 +54,16 @@ NSInteger path;
     self.devices=[[NSMutableDictionary alloc]init];
     self.deviceList.dataSource=self;
     self.deviceList.separatorStyle=UITableViewCellSeparatorStyleNone;
+    //[self.deviceList setBackgroundColor:[UIColor grayColor]];
     self.added = NO;
     self.socket=nil;
+    //catch return key on keyboard
+    self.apPass.delegate=self;
+    self.apPass.enablesReturnKeyAutomatically=YES;
+    self.SSID.delegate=self;
+    self.SSID.enablesReturnKeyAutomatically=YES;
+    self.deviceName.delegate=self;
+    self.deviceName.enablesReturnKeyAutomatically=YES;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -329,7 +337,9 @@ NSInteger path;
     return cell;
 }
 -(void)updateRecentDevice{
+    NSLog(@"update recent device");
     self.devices = [_globalConfig getDevices];
+    NSLog(@"device count %d", [[_globalConfig getDevices]count]);
     [self.deviceList performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
 }
 
@@ -411,6 +421,12 @@ NSInteger path;
 }
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
     
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    NSLog(@"textfieldshouldreturn");
+    [textField resignFirstResponder];
+    return YES;
 }
 
 

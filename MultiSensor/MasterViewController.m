@@ -29,11 +29,14 @@
     // Do any additional setup after loading the view, typically from a nib.
     //self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    /*UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];*/
+    //UIBarButtonItem *addButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     //self.navigationItem.rightBarButtonItem = addButton;
+    //NSLog(@"present first controller");
     self.realtimeDataController = (RealtimeDataController *)[[self.splitViewController.viewControllers lastObject] topViewController];
-    [self.splitViewController.displayModeButtonItem setTitle:NSLocalizedString(@"menu", @"menu")];
-    [self.splitViewController setPresentsWithGesture:NO];//stop slide gesture open masterview controller steve 20161212
+    self.realtimeDataController.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+    self.realtimeDataController.navigationItem.leftItemsSupplementBackButton = YES;
+    [self.realtimeDataController.navigationItem.leftBarButtonItem setTitle:NSLocalizedString(@"menu", @"menu")];
+    //[self.splitViewController setPresentsWithGesture:NO];//stop slide gesture open masterview controller steve 20161212
     [self initMasterTable];// set master table section
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;// remove table view line
     [self updateNetworkName];// get current SSID name
@@ -62,6 +65,7 @@
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    //NSLog(@"masterview prepareforsegue");
     if ([[segue identifier] isEqualToString:@"realtimeData"]) {
         //NSLog(@"realdata");
         RealtimeDataController *controller = (RealtimeDataController *)[[segue destinationViewController] topViewController];
@@ -88,7 +92,9 @@
     else if ([[segue identifier] isEqualToString:@"searchDevice"]){
         SearchViewController *controller = (SearchViewController *)[[segue destinationViewController] topViewController];
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-        controller.navigationItem.leftItemsSupplementBackButton=YES;    }
+        controller.navigationItem.leftItemsSupplementBackButton=YES;
+        //[controller.navigationItem.leftBarButtonItem setTitle:@"search"];
+    }
 }
 
 #pragma mark - Table View
@@ -127,7 +133,6 @@
     if (!self.objects)
         self.objects = [[NSMutableArray alloc]init];
     NSIndexPath *indexPath;
-    
     [self.objects insertObject:NSLocalizedString(@"search", @"search") atIndex:0];
     indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];

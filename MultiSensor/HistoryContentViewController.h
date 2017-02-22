@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Charts/Charts-swift.h>
+//#import <Charts/Charts-swift.h>
+@import Charts;
 //#import <Charts/Charts.h>
+#import "AxisDateFormatter.h"
 
 @interface HistoryContentViewController : UIViewController
 
