@@ -8,7 +8,7 @@
 
 #import "DeviceListViewController.h"
 
-@interface DeviceListViewController()<UITableViewDelegate, UITableViewDataSource, NSURLConnectionDelegate, NSURLConnectionDelegate>
+@interface DeviceListViewController()<UITableViewDelegate, UITableViewDataSource>
 
 @end
 
@@ -83,17 +83,12 @@ int count;
     [helper closeDataBase];
 }
 
--(void) alertWithMessage :( NSString *) message{
-    
-}
-
 -(void)syncSetting:(NSString *)mac{
     NSLog(@"sync setting");
     NSMutableDictionary *js_dic=[[NSMutableDictionary alloc]initWithObjectsAndKeys:@"YES",@"Initial",mac,@"macaddr", nil];
     NSError *err = nil;
     NSData *post_data = [NSJSONSerialization dataWithJSONObject:js_dic options:0 error:&err];
-    NSString *urlString=@"http://ecoacloud.com:80/cloudserver/Fuego_Sync";
-    NSURL *url=[NSURL URLWithString:urlString];
+    NSURL *url=[NSURL URLWithString:FUEGO_SYNC_URL];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
     [request setHTTPMethod:@"POST"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
@@ -102,83 +97,91 @@ int count;
     [request setHTTPBody:post_data];
     count=0;
     for (int i=0;i<3;i++){
-        NSURLConnection *connect = [[NSURLConnection alloc]initWithRequest:request delegate:self];
-    }
-}
-
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    // url connection error
-    NSLog(@"urlconnection error %@",[error localizedDescription]);
-    [self.data setLength:0];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-    if ([httpResponse statusCode]==200){
-        [self.data setLength:0];
-    }
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)rdata{
-    count++;
-    NSLog(@"didReceiveData");
-    //[self.data appendData:rdata];
-    if (rdata!=nil){
-        NSError *err=nil;
-        NSDictionary *jsob=[NSJSONSerialization JSONObjectWithData:rdata options:NSJSONReadingMutableLeaves error:&err];
-        //NSLog([jsob description]);
-        if([jsob objectForKey:@"40001"]!=nil){
-            NSUserDefaults *nd=[NSUserDefaults standardUserDefaults];
-            [nd setObject:[jsob objectForKey:@"40002"] forKey:@"CO2Ofs"];
-            [nd setObject:[jsob objectForKey:@"40003"] forKey:@"DustOfs"];
-            [nd setObject:[jsob objectForKey:@"40004"] forKey:@"pressOfs"];
-            [nd setObject:[jsob objectForKey:@"40005"] forKey:@"COOfs"];
-            [nd setObject:[jsob objectForKey:@"40006"] forKey:@"IaqOfs"];
-            [nd setObject:[jsob objectForKey:@"40007"] forKey:@"TempOfs"];
-            [nd setObject:[jsob objectForKey:@"40008"] forKey:@"HumiOfs"];
-            [nd setObject:[jsob objectForKey:@"40009"] forKey:@"GasOfs"];
-            [nd setObject:[jsob objectForKey:@"40010"] forKey:@"FanSpeed"];
-            [nd setObject:[jsob objectForKey:@"40011"] forKey:@"PirSensitive"];
-            [nd setObject:[jsob objectForKey:@"40012"] forKey:@"PirDelay"];
-            [nd setObject:[jsob objectForKey:@"40013"] forKey:@"TempAlmHigh"];
-            [nd setObject:[jsob objectForKey:@"40014"] forKey:@"TempAlmLow"];
-            [nd setObject:[jsob objectForKey:@"40015"] forKey:@"VocAlmHigh"];
-            [nd setObject:[jsob objectForKey:@"40016"] forKey:@"VocAlmHigh2"];
-            [nd setObject:[jsob objectForKey:@"40017"] forKey:@"CO2AlmStep1"];
-            [nd setObject:[jsob objectForKey:@"40018"] forKey:@"CO2AlmStep2"];
-            [nd setObject:[jsob objectForKey:@"40019"] forKey:@"COAlmHigh"];
-            [nd setObject:[jsob objectForKey:@"40020"] forKey:@"COAlmHigh2"];
-            [nd setObject:[jsob objectForKey:@"40021"] forKey:@"GasAlmHigh"];
-            [nd setObject:[jsob objectForKey:@"40022"] forKey:@"GasAlmHigh2"];
-            [nd setObject:[jsob objectForKey:@"40023"] forKey:@"DustAlmHigh"];
-            NSLog(@"%@", [jsob objectForKey:@"40024"]);
-            [nd setObject:[jsob objectForKey:@"40024"] forKey:@"DustAlmHigh2"];
-            if(![nd synchronize]){
-                    NSLog(@"initial setting synchronize failed");
-                if(count==3){
-                    [[NSNotificationCenter defaultCenter]postNotificationName:@"SYNC_FAILED" object:nil];
+        NSURLSession *session=[NSURLSession sharedSession];
+        NSURLSessionDataTask *task=[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+            NSLog(@"completionhandler");
+            if(error!=nil){
+                NSLog(@"Session Error: %@",[error localizedDescription]);
+                [self.data setLength:0];
+            }
+           // else if(response!=nil){
+           //     NSLog(@"response");
+           //     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+            //    if ([httpResponse statusCode]==200){
+           //         [self.data setLength:0];// 清除data內資料
+            //    }
+           // }
+            else if(data!=nil){
+                NSLog(@"data");
+                count++;
+                NSError *err=nil;
+                NSDictionary *jsob=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&err];
+                //NSLog([jsob description]);
+                if([jsob objectForKey:@"40001"]!=nil){
+                    NSUserDefaults *nd=[NSUserDefaults standardUserDefaults];
+                    [nd setObject:[jsob objectForKey:@"40002"] forKey:@"CO2Ofs"];
+                    [nd setObject:[jsob objectForKey:@"40003"] forKey:@"DustOfs"];
+                    [nd setObject:[jsob objectForKey:@"40004"] forKey:@"pressOfs"];
+                    [nd setObject:[jsob objectForKey:@"40005"] forKey:@"COOfs"];
+                    [nd setObject:[jsob objectForKey:@"40006"] forKey:@"IaqOfs"];
+                    [nd setObject:[jsob objectForKey:@"40007"] forKey:@"TempOfs"];
+                    [nd setObject:[jsob objectForKey:@"40008"] forKey:@"HumiOfs"];
+                    [nd setObject:[jsob objectForKey:@"40009"] forKey:@"GasOfs"];
+                    [nd setObject:[jsob objectForKey:@"40010"] forKey:@"FanSpeed"];
+                    [nd setObject:[jsob objectForKey:@"40011"] forKey:@"PirSensitive"];
+                    [nd setObject:[jsob objectForKey:@"40012"] forKey:@"PirDelay"];
+                    [nd setObject:[jsob objectForKey:@"40013"] forKey:@"TempAlmHigh"];
+                    [nd setObject:[jsob objectForKey:@"40014"] forKey:@"TempAlmLow"];
+                    [nd setObject:[jsob objectForKey:@"40015"] forKey:@"VocAlmHigh"];
+                    [nd setObject:[jsob objectForKey:@"40016"] forKey:@"VocAlmHigh2"];
+                    [nd setObject:[jsob objectForKey:@"40017"] forKey:@"CO2AlmStep1"];
+                    [nd setObject:[jsob objectForKey:@"40018"] forKey:@"CO2AlmStep2"];
+                    [nd setObject:[jsob objectForKey:@"40019"] forKey:@"COAlmHigh"];
+                    [nd setObject:[jsob objectForKey:@"40020"] forKey:@"COAlmHigh2"];
+                    [nd setObject:[jsob objectForKey:@"40021"] forKey:@"GasAlmHigh"];
+                    [nd setObject:[jsob objectForKey:@"40022"] forKey:@"GasAlmHigh2"];
+                    [nd setObject:[jsob objectForKey:@"40023"] forKey:@"DustAlmHigh"];
+                    NSLog(@"%@", [jsob objectForKey:@"40024"]);
+                    [nd setObject:[jsob objectForKey:@"40024"] forKey:@"DustAlmHigh2"];
+                    if(![nd synchronize]){
+                        NSLog(@"initial setting synchronize failed");
+                        if(count==3){
+                            [[NSNotificationCenter defaultCenter]postNotificationName:@"SYNC_FAILED" object:nil];
+                        }
+                    }
+                    else{
+                        if(count==3){
+                            NSLog(@"initial setting sync completed");
+                            [[NSNotificationCenter defaultCenter]postNotificationName:@"SYNC_COMPLETE" object:nil];
+                        }
+                    }
+                }
+                else {
+                    if(count==3){
+                        [[NSNotificationCenter defaultCenter]postNotificationName:@"SYNC_FAILED" object:nil];
+                    }
                 }
             }
-            else{
-                if(count==3){
-                    NSLog(@"initial setting sync completed");
-                    [[NSNotificationCenter defaultCenter]postNotificationName:@"SYNC_COMPLETE" object:nil];
-                }
-            }
-        }
+        }];
+        [task resume];
     }
 }
-
 -(void)receiveNotification:(NSNotification*)notify{
     if([notify.name isEqualToString:@"SYNC_COMPLETE"]){
+        NSLog(@"sync_complete");
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
-        [alert addAction:cancelAction];
-        [alert setMessage:NSLocalizedString(@"sync_ok", @"")];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [alert addAction:cancelAction];
+            [alert setMessage:NSLocalizedString(@"sync_ok", @"")];
+        });
     }
     else if([notify.name isEqualToString:@"SYNC_FAILED"]){
+        NSLog(@"sync_failed");
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
-        [alert addAction:cancelAction];
-        [alert setMessage:NSLocalizedString(@"sync_fail", @"")];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [alert addAction:cancelAction];
+            [alert setMessage:NSLocalizedString(@"sync_fail", @"")];
+        });
     }
 }
 

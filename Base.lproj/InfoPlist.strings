@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  MultiSensor
+
+  Created by Apple on 2017/3/13.
+  Copyright © 2017年 ECOA. All rights reserved.
+*/
+"NSLocationWhenInUseUsageDescription"="Allow APP use Location Service for better search result";

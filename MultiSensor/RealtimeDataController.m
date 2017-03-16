@@ -82,7 +82,6 @@ NSString *mac;
     [self.wifiReachability startNotifier];
     [self.wifiReachability currentReachabilityStatus];
     if ([Reachability reachabilityForLocalWiFi]){
-        NSLog(@"self startUDPListener");
         if (mac==nil&&![mac isEqualToString:@""]){
             NSLog(@"mac not exists");
         }
@@ -90,7 +89,7 @@ NSString *mac;
             [self startUDPListener];
         }
     }else {
-        
+        //[self readDataFromDatabase];
     }
     cache=[[NSMutableArray alloc]initWithCapacity:8];
     
@@ -101,7 +100,7 @@ NSString *mac;
     locationManager.distanceFilter=kCLDistanceFilterNone;
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
         NSLog(@"request locationamanger authorization");
-        [locationManager requestAlwaysAuthorization];//給ios8以上版本使用。
+        [locationManager requestWhenInUseAuthorization];//給ios8以上版本使用。
     }
 }
 
@@ -350,7 +349,6 @@ NSString *mac;
             else if(gasValue>2000)
                 [gas setBackgroundColor:PM25_Level_3];
             });
-            
         }
     }
     else if([notify.name isEqualToString:@"UPDATE_OUTDOOR"]){
@@ -399,7 +397,14 @@ NSString *mac;
         [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
         [request setValue:[NSString stringWithFormat:@"%d", post_data.length] forHTTPHeaderField:@"Content-Length"];
         [request setHTTPBody:post_data];
-        NSURLConnection *connect = [[NSURLConnection alloc]initWithRequest:request delegate:self];
+        //NSURLConnection *connect = [[NSURLConnection alloc]initWithRequest:request delegate:self];
+        NSURLSession *session=[NSURLSession sharedSession];
+        NSURLSessionDataTask *sessionTask=[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+            if (error!=nil){
+                NSLog(@"%@",[error description]);
+            }
+        }];
+        [sessionTask resume];
     }
 }
 
@@ -409,72 +414,16 @@ NSString *mac;
         [helper openDataBase];
         FMResultSet *rs=[helper getHistoryData:mac];
         if (rs!=nil&&[rs columnCount]>0){
-            [CO2 setText:[NSString stringWithFormat:@"%@ \n%@ ppm",NSLocalizedString(@"co2", @""),[rs objectForColumnName:@"40025"]]];
-            [pm25 setText:[NSString stringWithFormat:@"PM2.5 \n%@ μg/m3",[rs objectForColumnName:@"40026"]]];
-            NSString *value=[rs objectForColumnName:@"40027"];
-            [pressure setText:[NSString stringWithFormat:@"%@ \n%.2f hPa",NSLocalizedString(@"press",@"") ,([value floatValue]/10.0)]];
-            [CO setText:[NSString stringWithFormat:@"%@ \n%@ ppm",NSLocalizedString(@"co", @""),[rs objectForColumnName:@"40028"]]];
-            value=[rs objectForColumnName:@"40029"];
-            [VOC setText:[NSString stringWithFormat:@"%@ \n%d ppm",NSLocalizedString(@"voc", @""),([value integerValue]/10)]];
-            value=[rs objectForColumnName:@"40030"];
-            [temp setText:[NSString stringWithFormat:@"%@ \n%.2f°C",NSLocalizedString(@"temp", @""),([value floatValue]/100.0)]];
-            value=[rs objectForColumnName:@"40031"];
-            [humi setText:[NSString stringWithFormat:@"%@ \n%.2f RH%%",NSLocalizedString(@"humi", @""),([value floatValue]/10.0)]];
-            [gas setText:[NSString stringWithFormat:@"%@ \n%@ ppm",NSLocalizedString(@"gas", @""),[rs objectForColumnName:@"40032"]]];
-            int co2Value=[CO2.text integerValue];
-            int coValue=[CO.text integerValue];
-            int pm25Value=[pm25.text integerValue];
-            float vocValue=[VOC.text floatValue];
-            float tempValue=[temp.text integerValue];
-            int gasValue=[gas.text integerValue];
-            if (co2Value<800)
-                [CO2 setBackgroundColor:PM25_Level_0];
-            else if (800<=co2Value&&co2Value<1000)
-                [CO2 setBackgroundColor:PM25_Level_1];
-            else if (1000<=co2Value&&co2Value<1500)
-                [CO2 setBackgroundColor:PM25_Level_2];
-            else if (1500<=co2Value)
-                [CO2 setBackgroundColor:PM25_Level_3];
-            if(pm25Value<35)
-                [pm25 setBackgroundColor:PM25_Level_0];
-            else if(35<=pm25Value&&pm25Value<53)
-                [pm25 setBackgroundColor:PM25_Level_1];
-            else if(53<=pm25Value&&pm25Value<70)
-                [pm25 setBackgroundColor:PM25_Level_2];
-            else if(pm25Value>=70)
-                [pm25 setBackgroundColor:PM25_Level_3];
-            if (coValue<2)
-                [CO setBackgroundColor:PM25_Level_0];
-            else if(2<=coValue&&coValue<5)
-                [CO setBackgroundColor:PM25_Level_1];
-            else if(5<=coValue&&coValue<10)
-                [CO setBackgroundColor:PM25_Level_2];
-            else if(10<=coValue)
-                [CO setBackgroundColor:PM25_Level_3];
-            if(vocValue<10.0)
-                [VOC setBackgroundColor:PM25_Level_0];
-            else if(10.0<=vocValue&&vocValue<20.0)
-                [VOC setBackgroundColor:PM25_Level_1];
-            else if(20.0<=vocValue&&vocValue<29.0)
-                [VOC setBackgroundColor:PM25_Level_2];
-            else if(29.0<=vocValue)
-                [VOC setBackgroundColor:PM25_Level_3];
-            if(tempValue<4500.0)
-                [temp setBackgroundColor:PM25_Level_0];
-            else if(4500.0<=tempValue&&tempValue<5500.0)
-                [temp setBackgroundColor:PM25_Level_1];
-            else if(5500.0<=tempValue&&tempValue>6500.0)
-                [temp setBackgroundColor:PM25_Level_2];
-            else if(6500<=tempValue)
-                [temp setBackgroundColor:PM25_Level_3];
-            if(gasValue<500)
-                [gas setBackgroundColor:PM25_Level_0];
-            else if(500<=gasValue&&gasValue<1000)
-                [gas setBackgroundColor:PM25_Level_1];
-            else if(1000<=gasValue&&gasValue<2000)
-                [gas setBackgroundColor:PM25_Level_2];
-            else if(gasValue>2000)
-                [gas setBackgroundColor:PM25_Level_3];
+            NSMutableDictionary *json_dic=[[NSMutableDictionary alloc]init];
+            [json_dic setObject:[rs objectForColumnName:@"40025"] forKey:@"40025"];
+            [json_dic setObject:[rs objectForColumnName:@"40026"] forKey:@"40026"];
+            [json_dic setObject:[rs objectForColumnName:@"40027"] forKey:@"40027"];
+            [json_dic setObject:[rs objectForColumnName:@"40028"] forKey:@"40028"];
+            [json_dic setObject:[rs objectForColumnName:@"40029"] forKey:@"40029"];
+            [json_dic setObject:[rs objectForColumnName:@"40030"] forKey:@"40030"];
+            [json_dic setObject:[rs objectForColumnName:@"40031"] forKey:@"40031"];
+            [json_dic setObject:[rs objectForColumnName:@"40032"] forKey:@"40032"];
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"UPDATE_DATA" object:json_dic];
         }
         [rs close];
         [helper closeDataBase];
@@ -501,14 +450,16 @@ NSString *mac;
 }
 
 -(void)applyCache{
-    [pm25 setText:[cache objectAtIndex:0]];
-    [pressure setText:[cache objectAtIndex:1]];
-    [CO setText:[cache objectAtIndex:2]];
-    [CO2 setText:[cache objectAtIndex:3]];
-    [VOC setText:[cache objectAtIndex:4]];
-    [temp setText:[cache objectAtIndex:5]];
-    [humi setText:[cache objectAtIndex:6]];
-    [gas setText:[cache objectAtIndex:7]];
+    if([cache count]>0){
+        [pm25 setText:[cache objectAtIndex:0]];
+        [pressure setText:[cache objectAtIndex:1]];
+        [CO setText:[cache objectAtIndex:2]];
+        [CO2 setText:[cache objectAtIndex:3]];
+        [VOC setText:[cache objectAtIndex:4]];
+        [temp setText:[cache objectAtIndex:5]];
+        [humi setText:[cache objectAtIndex:6]];
+        [gas setText:[cache objectAtIndex:7]];
+    }
 }
 
 // CLLocationManagerDelegate 代理方法
@@ -522,10 +473,8 @@ NSString *mac;
         //NSLog([placeMark.addressDictionary objectForKey:@"State"]);
         //NSString *stateStr=[placeMark.addressDictionary objectForKey:@"State"];
         NSString *cityStr=[placeMark.addressDictionary objectForKey:@"City"];
-        // openData平台 AQI資料集 url
-        NSString *token=@"hni1KsKTO0S1QAPDtBco9Q";
-        NSString *url=@"http://opendata.epa.gov.tw/webapi/api/rest/datastore/355000000I-001805/?format=json&token=";
-        NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",url,token]];
+        //opendata api url
+        NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",OPENDATA_API_URL,OPENDATA_API_TOKEN]];
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:URL];
         NSURLSession *session=[NSURLSession sharedSession];
         NSURLSessionDataTask *sessionTask=[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){

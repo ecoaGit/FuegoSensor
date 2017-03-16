@@ -35,8 +35,9 @@
     self.realtimeDataController = (RealtimeDataController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     self.realtimeDataController.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
     self.realtimeDataController.navigationItem.leftItemsSupplementBackButton = YES;
-    [self.realtimeDataController.navigationItem.leftBarButtonItem setTitle:NSLocalizedString(@"menu", @"menu")];
+    //[self.realtimeDataController.navigationItem.leftBarButtonItem setTitle:@"stedte"];
     //[self.splitViewController setPresentsWithGesture:NO];//stop slide gesture open masterview controller steve 20161212
+    
     [self initMasterTable];// set master table section
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;// remove table view line
     [self updateNetworkName];// get current SSID name
@@ -65,7 +66,7 @@
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    //NSLog(@"masterview prepareforsegue");
+    NSLog(@"masterview prepareforsegue:%@", [segue identifier]);
     if ([[segue identifier] isEqualToString:@"realtimeData"]) {
         //NSLog(@"realdata");
         RealtimeDataController *controller = (RealtimeDataController *)[[segue destinationViewController] topViewController];
@@ -109,7 +110,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
     NSDate *object = self.objects[indexPath.row];
     cell.textLabel.text = [object description];
     return cell;
@@ -142,7 +142,6 @@
     [self.objects insertObject:NSLocalizedString(@"setting", @"setting") atIndex:0];
     indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-
     [self.objects insertObject:NSLocalizedString(@"history", @"history") atIndex:0];
     indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -152,6 +151,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"didSelectRowAtIndexPath :%ld", (long)indexPath.row);
     switch (indexPath.row){
         case 0:
             [self performSegueWithIdentifier:@"realtimeData" sender:self];

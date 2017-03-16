@@ -47,7 +47,6 @@ NSInteger path;
     self.progressbar.center=self.view.center;
     self.progressbar.hidden=YES;
     [self.view addSubview:self.progressbar];
-    
     [self.SSID addTarget:self action:@selector(ssidDidChange) forControlEvents:UIControlEventEditingChanged];
     NSNotificationCenter *defCenter=[NSNotificationCenter defaultCenter];
     [defCenter addObserver:self selector:@selector(deviceAdded:) name:@"deviceFound" object:nil];
@@ -364,8 +363,10 @@ NSInteger path;
     // read data
     NSLog(@"delegate: receive data");
     if (tag==readMacHeaderTag){
+        NSLog(@"readmacheadertag");
         [self.socket readDataWithTimeout:-1 tag:readMacContentTag];
     }else if (tag==readMacContentTag){
+        NSLog(@"readmaccontenttag");
         if (data != nil) {
             //NSLog([data description]);
             NSString *mac=[self parseMAC:data];

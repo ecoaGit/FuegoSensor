@@ -14,14 +14,17 @@
 @property (nonatomic,retain) LineChartView *chartView;
 @end
 
+
 @implementation HistoryContentViewController
 
 -(void)viewDidLoad{
-    NSLog(@"ContentView chart viewdidload");
+    //NSLog(@"ContentView chart viewdidload");
     [self.chartView animateWithXAxisDuration:1.0f];
 }
 
 -(void)setContentViewData:(NSMutableArray *)viewData withKey:(NSInteger)key{
+    //NSLog(@"key %d",key);
+    _contentKey=key;
     NSString *objKey=@"";
     NSString *chartTitle=@"";
     switch(key){
@@ -75,10 +78,12 @@
     [self.chartView setFrame:CGRectMake(0, 60, self.view.bounds.size.width, (self.view.bounds.size.height-120))];
     [self.view addSubview:label];
     [self.view addSubview:self.chartView];
-    _chartView.backgroundColor=[UIColor colorWithRed:32.0/255.0 green:32.0/255.0 blue:32.0/255.0 alpha:144.0/255.0];
+    //_chartView.backgroundColor=[UIColor colorWithRed:32.0/255.0 green:32.0/255.0 blue:32.0/255.0 alpha:144.0/255.0];
+    _chartView.backgroundColor=[UIColor lightGrayColor];
     _chartView.gridBackgroundColor=[UIColor grayColor];
     self.chartView.dragEnabled=YES;
     self.chartView.drawGridBackgroundEnabled=YES;
+    self.chartView.descriptionText=@"";
     self.chartView.noDataText=@"---";
     self.chartView.doubleTapToZoomEnabled=NO;//取消双击缩放
     self.chartView.dragEnabled=YES;//启用拖拽图标
@@ -99,19 +104,21 @@
     yAxis.axisLineWidth=1.0/[UIScreen mainScreen].scale;//Y轴线宽
     yAxis.axisLineColor=[UIColor blackColor];//Y轴颜色
     yAxis.valueFormatter=[[ChartDefaultAxisValueFormatter alloc] initWithFormatter:[[NSNumberFormatter alloc] init]];//自定义格式
-    //leftAxis.valueFormatter.positiveSuffix;//数字后缀单位
     yAxis.labelPosition=YAxisLabelPositionOutsideChart;//label位置
     yAxis.labelTextColor=[UIColor blackColor];//文字颜色
     yAxis.labelFont=[UIFont systemFontOfSize:20.0f];//文字字体
-    yAxis.gridColor=[UIColor blackColor];
+    yAxis.drawGridLinesEnabled=YES;
+    yAxis.gridColor=[UIColor whiteColor];
     // X axis
     ChartXAxis *xAxis=self.chartView.xAxis;
     xAxis.axisLineWidth=1.0/[UIScreen mainScreen].scale;//设置X轴线宽
     xAxis.labelPosition=XAxisLabelPositionBottom;//X轴的显示位置，默认是显示在上面的
+    //xAxis.spaceMax=5;
+    //xAxis.spaceMin=5;
     xAxis.drawGridLinesEnabled=NO;//不绘制网格线
-    xAxis.labelRotationAngle=-30.0;
+    xAxis.labelRotationAngle=-45.0;
     xAxis.labelTextColor=[UIColor blackColor];//label文字颜色
-    xAxis.labelFont=[UIFont systemFontOfSize:20.0f];
+    xAxis.labelFont=[UIFont systemFontOfSize:18.0f];
     //ChartIndexAxisValueFormatter
     AxisDateFormatter *adf=[[AxisDateFormatter alloc]initWithDateFormat:@"MM-dd HH:mm"];
     xAxis.valueFormatter=adf;
@@ -119,7 +126,7 @@
     [ndfD setDateFormat:@"yyyy-MM-dd HH:mm:ss"];// 資料庫日期格式
     
     if (viewData!=nil&&[viewData count]>0){
-        NSLog(@"viewData is not nil");
+        //NSLog(@"viewData is not nil");
         double yMax=0;
         double yMin=[[[viewData objectAtIndex:0] objectForKey:objKey] doubleValue];
         for(int i=0;i<[viewData count];i++){
@@ -133,15 +140,10 @@
             }
             NSString *dString=[[viewData objectAtIndex:i] objectForKey:@"_date"];
             //NSLog(@"string %@", dString);
-            NSDate *date=[ndfD dateFromString:dString];
-            NSTimeInterval seconds=[date timeIntervalSince1970];// date秒數
+            NSDate *date=[ndfD dateFromString:dString];//字串轉成NSDate
+            NSTimeInterval seconds=[date timeIntervalSince1970];//date轉成秒數
             ChartDataEntry *entry=[[ChartDataEntry alloc]initWithX:seconds y:value];
             [yData addObject:entry];
-            //ChartDataEntry *entry=[[ChartDataEntry alloc]initWithValue:value xIndex:i];
-            //NSString *dString=[[viewData objectAtIndex:i] objectForKey:@"_date"];
-            //NSDate *date=[ndfD dateFromString:dString];
-            //[xData addObject:[ndf stringFromDate:date]];//將資料庫日期格式轉為label日期格式
-            //[xData addObject:[[viewData objectAtIndex:i] objectForKey:@"_date"]];
         }
         yAxis.axisMaxValue=yMax+10;
         yAxis.axisMinValue=yMin-10;
@@ -157,30 +159,29 @@
     else {
         //NSLog(@"dataset initwithyvals");
         dataset=[[LineChartDataSet alloc]initWithValues:yData label:chartTitle];
-        dataset.lineWidth=2.0/[UIScreen mainScreen].scale;
+        dataset.lineWidth=3.0/[UIScreen mainScreen].scale;
+        dataset.drawValuesEnabled=NO;
         //dataset.drawValuesEnabled=YES;//是否在拐点处显示数据
-        dataset.valueColors=@[[UIColor brownColor]];//折线拐点处显示数据的颜色
-        [dataset setColor:[UIColor orangeColor]];//折线颜色
-        dataset.drawSteppedEnabled=NO;//是否开启绘制阶梯样式的折线图
+        dataset.valueColors=@[[UIColor whiteColor]];//折线拐点处显示数据的颜色
+        [dataset setColor:[UIColor blueColor]];//折线颜色
+        //dataset.drawSteppedEnabled=YES;//是否开启绘制阶梯样式的折线图
+        dataset.drawSteppedEnabled=NO;
         //折线拐点样式
         dataset.drawCirclesEnabled=YES;//是否绘制拐点
-        dataset.circleRadius=3.0f;//拐点半径
-        dataset.circleColors=@[[UIColor redColor]];//拐点颜色
+        dataset.circleRadius=4.0f;//拐点半径
+        dataset.circleColors=@[[UIColor blueColor]];//拐点颜色
         //拐点中间的空心样式
-        dataset.drawCircleHoleEnabled=YES;//是否绘制中间的空心
-        dataset.circleHoleRadius=2.0f;//空心的半径
-        dataset.circleHoleColor=[UIColor whiteColor];//空心的颜色
+        dataset.drawCircleHoleEnabled=NO;//是否绘制中间的空心
+        //dataset.circleHoleRadius=2.0f;//空心的半径
+       //dataset.circleHoleColor=[UIColor whiteColor];//空心的颜色
         //dataset.drawFilledEnabled=YES;
-        
         NSMutableArray *datasets=[[NSMutableArray alloc]init];
         [datasets addObject:dataset];
         //NSLog(@"data initwithxvals");
         LineChartData *data=[[LineChartData alloc]initWithDataSets:datasets];
-        //LineChartData *data=[[LineChartData alloc]initWithXVals:xData dataSets:datasets];
         [data setValueTextColor:[UIColor whiteColor]];
         self.chartView.data=data;
         [self updateData];
-        //dispatch_async(dispatch_get_main_queue(),^{[_chartView animateWithXAxisDuration:1.0f];});
     }
 }
 

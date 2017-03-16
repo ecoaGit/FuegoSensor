@@ -28,7 +28,6 @@
     UIBarButtonItem *button = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(closeWebView:)];
     item.rightBarButtonItem = button;
     [bar setItems:[NSArray arrayWithObject:item]];
-    
 
     [item setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil]];
     [item setHidesBackButton:NO];

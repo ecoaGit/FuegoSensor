@@ -11,7 +11,6 @@
 		180EC35A1E4ACDBE009A8913 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 180EC3541E4ACD87009A8913 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		180EC36A1E4DA482009A8913 /* libFirstTimeConfig.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 180EC3691E4DA482009A8913 /* libFirstTimeConfig.a */; };
 		182659B31D8F849A00C60627 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 182659B51D8F849A00C60627 /* Localizable.strings */; };
-		182659BA1D8F859B00C60627 /* infoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 182659B91D8F859B00C60627 /* infoPlist.strings */; };
 		182659C61D8F8A8800C60627 /* RealtimeDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182659C51D8F8A8800C60627 /* RealtimeDataController.m */; };
 		182659CC1D90E04100C60627 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182659CB1D90E04100C60627 /* HistoryViewController.m */; };
 		182659CF1D90E06C00C60627 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182659CE1D90E06C00C60627 /* SearchViewController.m */; };
@@ -19,7 +18,7 @@
 		182D53931E55906900D57FB5 /* AxisDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 182D53921E55906900D57FB5 /* AxisDateFormatter.m */; };
 		18400E131DE2E7FD00C0461F /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18400E121DE2E7FD00C0461F /* WebViewController.m */; };
 		184D8EDA1DA1FED400F894CC /* HistoryContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184D8ED91DA1FED400F894CC /* HistoryContentViewController.m */; };
-		18674CEB1DB05D580058E087 /* pollMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 18674CEA1DB05D580058E087 /* pollMode.m */; };
+		184F08E61E7674C500FEF3C8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 184F08E81E7674C500FEF3C8 /* InfoPlist.strings */; };
 		1870E09C1DAF301500CB4699 /* FTC.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1870E0911DAF301500CB4699 /* FTC.plist */; };
 		1870E09F1DAF301500CB4699 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1870E09A1DAF301500CB4699 /* Reachability.m */; };
 		1870E0A51DAF30B500CB4699 /* SmartConfigDiscoverMDNS.m in Sources */ = {isa = PBXBuildFile; fileRef = 1870E0A21DAF30B500CB4699 /* SmartConfigDiscoverMDNS.m */; };
@@ -107,7 +106,6 @@
 		182659AF1D8F841E00C60627 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		182659B01D8F841E00C60627 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		182659B81D8F84A000C60627 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		182659B91D8F859B00C60627 /* infoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = infoPlist.strings; path = "../../../../../apple/Documents/apple app workspace/MultiSensor/MultiSensor/infoPlist.strings"; sourceTree = "<group>"; };
 		182659BB1D8F865400C60627 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		182659BC1D8F865600C60627 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		182659C41D8F8A8800C60627 /* RealtimeDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RealtimeDataController.h; path = "../../../../../apple/Documents/apple app workspace/MultiSensor/MultiSensor/RealtimeDataController.h"; sourceTree = "<group>"; };
@@ -124,8 +122,9 @@
 		18400E121DE2E7FD00C0461F /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		184D8ED81DA1FED400F894CC /* HistoryContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryContentViewController.h; path = "../../../../../apple/Documents/apple app workspace/MultiSensor/MultiSensor/HistoryContentViewController.h"; sourceTree = "<group>"; };
 		184D8ED91DA1FED400F894CC /* HistoryContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryContentViewController.m; path = "../../../../../apple/Documents/apple app workspace/MultiSensor/MultiSensor/HistoryContentViewController.m"; sourceTree = "<group>"; };
-		18674CE91DB05D580058E087 /* pollMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pollMode.h; sourceTree = "<group>"; };
-		18674CEA1DB05D580058E087 /* pollMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pollMode.m; sourceTree = "<group>"; };
+		184F08E71E7674C500FEF3C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		184F08E91E7674C900FEF3C8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		184F08EA1E7674CA00FEF3C8 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		1870E08F1DAF301500CB4699 /* FirstTimeConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstTimeConfig.h; sourceTree = "<group>"; };
 		1870E0901DAF301500CB4699 /* FTC-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FTC-Prefix.pch"; sourceTree = "<group>"; };
 		1870E0911DAF301500CB4699 /* FTC.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FTC.plist; sourceTree = "<group>"; };
@@ -163,6 +162,7 @@
 		18CC339B1D82B03A0010FAF0 /* MultiSensorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiSensorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18CC339F1D82B03A0010FAF0 /* MultiSensorUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiSensorUITests.m; sourceTree = "<group>"; };
 		18CC33A11D82B03A0010FAF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18D781CC1E6E454D0023A45D /* pollMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pollMode.h; sourceTree = "<group>"; };
 		45ACF30B7B60EFB65763562E /* Pods-MultiSensor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiSensor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MultiSensor/Pods-MultiSensor.debug.xcconfig"; sourceTree = "<group>"; };
 		E40D68704F8F14A864B6F3CA /* Pods-MultiSensor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiSensor.release.xcconfig"; path = "Pods/Target Support Files/Pods-MultiSensor/Pods-MultiSensor.release.xcconfig"; sourceTree = "<group>"; };
 		EF503F563FEC2D5CA20261FD /* Pods_MultiSensor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultiSensor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,9 +261,9 @@
 				18CC33861D82B03A0010FAF0 /* Assets.xcassets */,
 				18CC33881D82B03A0010FAF0 /* LaunchScreen.storyboard */,
 				18CC338B1D82B03A0010FAF0 /* Info.plist */,
+				184F08E81E7674C500FEF3C8 /* InfoPlist.strings */,
 				18CC33771D82B03A0010FAF0 /* Supporting Files */,
 				182659B51D8F849A00C60627 /* Localizable.strings */,
-				182659B91D8F859B00C60627 /* infoPlist.strings */,
 				182659C41D8F8A8800C60627 /* RealtimeDataController.h */,
 				182659C51D8F8A8800C60627 /* RealtimeDataController.m */,
 				182659CA1D90E04100C60627 /* HistoryViewController.h */,
@@ -274,14 +274,13 @@
 				182659D11D93E0D100C60627 /* DeviceListViewController.m */,
 				184D8ED81DA1FED400F894CC /* HistoryContentViewController.h */,
 				184D8ED91DA1FED400F894CC /* HistoryContentViewController.m */,
-				18674CE91DB05D580058E087 /* pollMode.h */,
-				18674CEA1DB05D580058E087 /* pollMode.m */,
 				18BFCA411DE54A1600F5141E /* DBHelper.h */,
 				18BFCA421DE54A1600F5141E /* DBHelper.m */,
 				187468D71DF5177600BB9130 /* SettingViewController.h */,
 				187468D81DF5177600BB9130 /* SettingViewController.m */,
 				182D53911E55906900D57FB5 /* AxisDateFormatter.h */,
 				182D53921E55906900D57FB5 /* AxisDateFormatter.m */,
+				18D781CC1E6E454D0023A45D /* pollMode.h */,
 			);
 			path = MultiSensor;
 			sourceTree = "<group>";
@@ -481,11 +480,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				18CC338A1D82B03A0010FAF0 /* LaunchScreen.storyboard in Resources */,
+				184F08E61E7674C500FEF3C8 /* InfoPlist.strings in Resources */,
 				182659B31D8F849A00C60627 /* Localizable.strings in Resources */,
 				18CC33871D82B03A0010FAF0 /* Assets.xcassets in Resources */,
 				18CC33851D82B03A0010FAF0 /* Main.storyboard in Resources */,
 				1870E09C1DAF301500CB4699 /* FTC.plist in Resources */,
-				182659BA1D8F859B00C60627 /* infoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,7 +572,6 @@
 				18BFCA431DE54A1600F5141E /* DBHelper.m in Sources */,
 				182659CC1D90E04100C60627 /* HistoryViewController.m in Sources */,
 				182659CF1D90E06C00C60627 /* SearchViewController.m in Sources */,
-				18674CEB1DB05D580058E087 /* pollMode.m in Sources */,
 				187468D91DF5177600BB9130 /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -624,6 +622,17 @@
 			);
 			name = Localizable.strings;
 			path = "../../../../../apple/Documents/apple app workspace/MultiSensor/MultiSensor";
+			sourceTree = "<group>";
+		};
+		184F08E81E7674C500FEF3C8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				184F08E71E7674C500FEF3C8 /* Base */,
+				184F08E91E7674C900FEF3C8 /* zh-Hans */,
+				184F08EA1E7674CA00FEF3C8 /* zh-Hant */,
+			);
+			name = InfoPlist.strings;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		18CC33831D82B03A0010FAF0 /* Main.storyboard */ = {
@@ -754,6 +763,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ECOA-technologies-corp.MultiSensor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
@@ -779,6 +789,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ECOA-technologies-corp.MultiSensor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;

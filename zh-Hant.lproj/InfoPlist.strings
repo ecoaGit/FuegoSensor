@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  MultiSensor
+
+  Created by Apple on 2017/3/13.
+  Copyright © 2017年 ECOA. All rights reserved.
+*/
+"NSLocationWhenInUseUsageDescription"="允許APP使用手機所在位置獲得空氣品質資訊";

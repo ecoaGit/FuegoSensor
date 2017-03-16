@@ -139,13 +139,14 @@ static DBHelper *sInstance;
 }
 
 -(FMResultSet *)getDayMax:(NSString*)mac{
+    NSLog(@"getDayMax");
     if (!db.open){
         NSLog(@"DBHelper: could not open databse");
         return nil;
     }
     if(![mac isEqualToString:@""]){
-        FMResultSet *rt=[db executeQuery:[NSString stringWithFormat:@"SELECT _date, max(`40025`) as max40025, max(`40026`) as max40026,max(`40027`) as max40027, max(`40028`) as max40028,max(`40029`) as max40029, max(`40030`) as max40030,max(`40031`) as max40031, max(`40032`) as max40032 FROM history_data WHERE macaddr='%@' GROUP by strftime('%%Y-%%m-%%d-%%H',_date) ORDER BY date(_date) ;",mac]];
-        NSLog(@"%@",[db lastError]);
+        FMResultSet *rt=[db executeQuery:[NSString stringWithFormat:@"SELECT _date, max(`40025`) as max40025, max(`40026`) as max40026,max(`40027`) as max40027, max(`40028`) as max40028,max(`40029`) as max40029, max(`40030`) as max40030,max(`40031`) as max40031, max(`40032`) as max40032 FROM history_data WHERE macaddr='%@' AND _date>=date('now','-7 day') GROUP by strftime('%%Y-%%m-%%d-%%H',_date) ORDER BY date(_date) ;",mac]];
+        NSLog(@"db last error: %@",[db lastError]);
         return rt;
     }
     return nil;

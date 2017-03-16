@@ -92,29 +92,51 @@
 -(void)readSetting{
     NSUserDefaults *nd=[NSUserDefaults standardUserDefaults];
     [co2 setText:[nd stringForKey:@"CO2Ofs"]];
+    [co2 setDelegate:self];
     [pm25 setText:[nd stringForKey:@"DustOfs"]];
+    [pm25 setDelegate:self];
     [press setText:[nd stringForKey:@"pressOfs"]];
+    [press setDelegate:self];
     [co setText:[nd stringForKey:@"COOfs"]];
+    [co setDelegate:self];
     [iaq setText:[nd stringForKey:@"IaqOfs"]];
+    [iaq setDelegate:self];
     [temp setText:[nd stringForKey:@"TempOfs"]];
+    [temp setDelegate:self];
     [humi setText:[nd stringForKey:@"HumiOfs"]];
+    [humi setDelegate:self];
     [gas setText:[nd stringForKey:@"GasOfs"]];
+    [gas setDelegate:self];
     [fans setText:[nd stringForKey:@"FanSpeed"]];
+    [fans setDelegate:self];
     [pirs setText:[nd stringForKey:@"PirSensitive"]];
+    [pirs setDelegate:self];
     [pird setText:[nd stringForKey:@"PirDelay"]];
+    [pird setDelegate:self];
     [tah setText:[nd stringForKey:@"TempAlmHigh"]];
+    [tah setDelegate:self];
     [tal setText:[nd stringForKey:@"TempAlmLow"]];
+    [tal setDelegate:self];
     [vah setText:[nd stringForKey:@"VocAlmHigh"]];
+    [vah setDelegate:self];
     [vah2 setText:[nd stringForKey:@"VocAlmHigh2"]];
+    [vah2 setDelegate:self];
     [c2ah setText:[nd stringForKey:@"CO2AlmStep1"]];
+    [c2ah setDelegate:self];
     [c2ah2 setText:[nd stringForKey:@"CO2AlmStep2"]];
+    [c2ah2 setDelegate:self];
     [cah setText:[nd stringForKey:@"COAlmHigh"]];
+    [cah setDelegate:self];
     [cah2 setText:[nd stringForKey:@"COAlmHigh2"]];
+    [cah2 setDelegate:self];
     [gah setText:[nd stringForKey:@"GasAlmHigh"]];
+    [gah setDelegate:self];
     [gah2 setText:[nd stringForKey:@"GasAlmHigh2"]];
+    [gah2 setDelegate:self];
     [dah setText:[nd stringForKey:@"DustAlmHigh"]];
-    NSLog(@"%@", [nd stringForKey:@"DustAlmHigh2"]);
+    [dah setDelegate:self];
     [dah2 setText:[nd stringForKey:@"DustAlmHigh2"]];
+    [dah2 setDelegate:self];
 }
 
 -(void)saveSetting{
@@ -146,7 +168,6 @@
     if(![nd synchronize]){
         NSLog(@"saveSetting synchroize failed");
     }
-    NSLog(@"%@",[nd stringForKey:@"DustAlmHigh2"]);
     NSMutableDictionary *js_dic=[[NSMutableDictionary alloc]init];
     [js_dic setObject:@"0" forKey:@"40001"];
     [js_dic setObject:[co2 text] forKey:@"40002"];
@@ -184,7 +205,15 @@
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setValue:[NSString stringWithFormat:@"%d", post_data.length] forHTTPHeaderField:@"Content-Length"];
     [request setHTTPBody:post_data];
-    NSURLConnection *connect = [[NSURLConnection alloc]initWithRequest:request delegate:self];
+    //NSURLConnection *connect = [[NSURLConnection alloc]initWithRequest:request delegate:self];
+    NSURLSession *session=[NSURLSession sharedSession];
+    NSURLSessionDataTask *task=[session dataTaskWithRequest:request];
+    [task resume];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end

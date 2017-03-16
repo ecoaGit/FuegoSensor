@@ -14,6 +14,7 @@
 
 @interface HistoryContentViewController : UIViewController
 
+@property NSUInteger contentKey;
 -(void)setContentViewData:(NSMutableArray *)viewData withKey:(NSInteger)key;
 
 @end

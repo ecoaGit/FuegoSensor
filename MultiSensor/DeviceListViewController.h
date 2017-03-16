@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "SmartConfigGlobalConfig.h"
 #import "DBHelper.h"
+#import "pollMode.h"
 
 
-@interface DeviceListViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource, NSURLConnectionDelegate, NSURLConnectionDataDelegate>
+@interface DeviceListViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic,retain) NSMutableArray *device;
 @property (nonatomic,retain) NSMutableDictionary *recentDevice;

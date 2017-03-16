@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface SettingViewController : UIViewController <NSURLConnectionDelegate, NSURLConnectionDataDelegate>
+@interface SettingViewController : UIViewController <NSURLConnectionDelegate, NSURLConnectionDataDelegate, UITextFieldDelegate>
 
 @property (nonatomic,retain) IBOutlet UITextField *co2;
 @property (nonatomic,retain) IBOutlet UITextField *co;

@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  MultiSensor
+
+  Created by Apple on 2017/3/13.
+  Copyright © 2017年 ECOA. All rights reserved.
+*/
+"NSLocationWhenInUseUsageDescription"="允许应用程式获得使用者位址";
